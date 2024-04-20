@@ -53,7 +53,7 @@
             add(formPanel, BorderLayout.CENTER);
             add(addStudentButton, BorderLayout.SOUTH);
 
-            setBackground(new Color(0, 102, 255));
+            setBackground(new Color(153, 0, 0));
         }
         private boolean isValidEmail(String email) {
             String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
