@@ -1,3 +1,205 @@
+//package edu.neu.csye6200.views;
+//import edu.neu.csye6200.controllers.SignInController;
+//import edu.neu.csye6200.model.Auth;
+//import edu.neu.csye6200.views.TeacherRegistrationPannel;
+//import javax.swing.*;
+//import java.awt.*;
+//import java.awt.event.ActionEvent;
+//import java.sql.SQLException;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+//
+//public class MainFrame extends JFrame {
+//
+//    private JButton teacherRegistrationButton;
+//    private JButton studentRegistrationButton;
+//    private JButton studentViewUpdateButton;
+//    private JButton immunizationButton;
+//    private JButton assignStudentsButton;
+//    private JButton teacherViewUpdateButton;
+//    private JButton annualReviewButton;
+//    private JButton classViewUpdateButton;
+//    private JButton signOutButton;
+//    private JPanel mainContentPanel;
+//    private JSplitPane jSplitPane1;
+//
+//    public MainFrame() {
+//        initComponents();
+//        setupButtonActions();
+//        setTitle("Daycare Management System");
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        setSize(800, 600); // Set the initial size of the frame
+//        setLocationRelativeTo(null); // Center the frame
+//        setVisible(true);
+//    }
+//
+//    private void initComponents() {
+//        // Initialize the split pane and main content panel
+//        jSplitPane1 = new JSplitPane();
+//        jSplitPane1.setDividerLocation(150);
+//        mainContentPanel = new JPanel();
+//
+//        // Initialize buttons
+//        teacherRegistrationButton = new JButton("Teacher Registration");
+//        studentRegistrationButton = new JButton("Student Registration");
+//        studentViewUpdateButton = new JButton("Student View/Update");
+//        immunizationButton = new JButton("Immunization");
+//        assignStudentsButton = new JButton("Assign Students");
+//        teacherViewUpdateButton = new JButton("Teacher View/Update");
+//        annualReviewButton = new JButton("Annual Review");
+//        classViewUpdateButton = new JButton("Class View/Update");
+//        signOutButton = new JButton("Log Out");
+//
+//        // Initialize left panel with buttons
+//        JPanel leftPanel = new JPanel();
+//        leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
+//        leftPanel.add(teacherRegistrationButton);
+//        leftPanel.add(studentRegistrationButton);
+//        leftPanel.add(studentViewUpdateButton);
+//        leftPanel.add(immunizationButton);
+//        leftPanel.add(assignStudentsButton);
+//        leftPanel.add(teacherViewUpdateButton);
+//        leftPanel.add(annualReviewButton);
+//        leftPanel.add(classViewUpdateButton);
+//        leftPanel.add(signOutButton);
+//
+//        // Add components to split pane
+//        jSplitPane1.setLeftComponent(new JScrollPane(leftPanel));
+//        jSplitPane1.setRightComponent(mainContentPanel);
+//
+//        // Add the split pane to the frame
+//        setContentPane(jSplitPane1);
+//    }
+//
+//    private void setupButtonActions() {
+//        teacherRegistrationButton.addActionListener(evt -> switchToPanel(new TeacherRegistrationPanel()));
+//        studentRegistrationButton.addActionListener(evt -> switchToPanel(new StudentRegistrationPanel()));
+//        studentViewUpdateButton.addActionListener(evt -> switchToPanel(new StudentViewUpdatePanel()));
+//        immunizationButton.addActionListener(evt -> switchToPanel(new ImmunizationPanel()));
+//        assignStudentsButton.addActionListener(evt -> switchToPanel(new AssignStudentsPanel()));
+//        teacherViewUpdateButton.addActionListener(evt -> switchToPanel(new TeacherViewUpdatePanel()));
+//        annualReviewButton.addActionListener(evt -> switchToPanel(new AnnualReviewPanel()));
+//        classViewUpdateButton.addActionListener(evt -> switchToPanel(new ClassViewUpdatePanel()));
+//        signOutButton.addActionListener(evt -> signOut());
+//    }
+//
+//    // Helper method to switch the main content panel
+//    private void switchToPanel(JPanel panel) {
+//        mainContentPanel.removeAll();
+//        mainContentPanel.setLayout(new BorderLayout());
+//        mainContentPanel.add(panel);
+//        mainContentPanel.revalidate();
+//        mainContentPanel.repaint();
+//    }
+//
+//    // Placeholder methods for actions
+//    private void signOut() {
+//        // Perform sign out logic here
+//        JOptionPane.showMessageDialog(this, "Signed out");
+//        Auth.logOut();
+//        new SignIn().setVisible(true);
+//        this.setVisible(false);
+//    }
+//
+//    public static void main(String[] args) {
+//        EventQueue.invokeLater(() -> new MainFrame().setVisible(true));
+//    }
+//
+//    // Placeholder inner classes for panel components
+//    // Replace with your actual panel class implementations
+//    class TeacherRegistrationPanel extends JPanel {
+//        public TeacherRegistrationPanel() {
+//        	TeacherRegistrationPannel comp = new TeacherRegistrationPannel();
+//        	jSplitPane1.setRightComponent(comp);
+//            add(new JLabel("Teacher Registration Panel"));
+//        }
+//    }
+//
+//    class StudentRegistrationPanel extends JPanel {
+//        public StudentRegistrationPanel() {
+//            add(new JLabel("Student Registration Panel"));
+//            StudentRegistration comp = new StudentRegistration();
+//            jSplitPane1.setRightComponent(comp);
+//        }
+//    }
+//
+//    class StudentViewUpdatePanel extends JPanel {
+//        public StudentViewUpdatePanel() {
+//            try {
+//                StudentViewOrUpdate comp = new StudentViewOrUpdate();
+//                jSplitPane1.setRightComponent(comp);
+//                add(new JLabel("Student View/Update Panel"));
+//            } catch (SQLException ex) {
+//                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+//                JOptionPane.showMessageDialog(this, "Error while viewing or updating students.", "Database Error", JOptionPane.ERROR_MESSAGE);
+//            }
+//        }
+//    }
+//
+//
+//    class ImmunizationPanel extends JPanel {
+//        public ImmunizationPanel() {
+//        	try {
+//                ImmunizationAdd comp = new ImmunizationAdd();
+//                jSplitPane1.setRightComponent(comp);
+//                add(new JLabel("Immunization Panel"));
+//            } catch (SQLException ex) {
+//                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+//                // Handle exception, possibly with a user-friendly message
+//                JOptionPane.showMessageDialog(this, "Error accessing the database.", "Database Error", JOptionPane.ERROR_MESSAGE);
+//            }
+//        }
+//    }
+//
+//    class AssignStudentsPanel extends JPanel {
+//        public AssignStudentsPanel() {
+//            try {
+//                StudentAssignment comp = new StudentAssignment();
+//                jSplitPane1.setRightComponent(comp);
+//                add(new JLabel("Assign Students Panel"));
+//            } catch (SQLException ex) {
+//                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+//                JOptionPane.showMessageDialog(this, "Error while assigning students.", "Database Error", JOptionPane.ERROR_MESSAGE);
+//            }
+//        }
+//    }
+//
+//    class TeacherViewUpdatePanel extends JPanel {
+//        public TeacherViewUpdatePanel() {
+//            try {
+//                TeacherViewOrUpdate comp = new TeacherViewOrUpdate();
+//                jSplitPane1.setRightComponent(comp);
+//                add(new JLabel("Teacher View/Update Panel"));
+//            } catch (SQLException ex) {
+//                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+//                JOptionPane.showMessageDialog(this, "Error while updating teacher view.", "Database Error", JOptionPane.ERROR_MESSAGE);
+//            }
+//        }
+//    }
+//
+//
+//    class AnnualReviewPanel extends JPanel {
+//        public AnnualReviewPanel() {
+//            add(new JLabel("Annual Review Panel"));
+//            AnnualReview comp = new AnnualReview();
+//            jSplitPane1.setRightComponent(comp);
+//        }
+//    }
+//
+//    class ClassViewUpdatePanel extends JPanel {
+//        public ClassViewUpdatePanel() {
+//            // Initialization code here
+//            add(new JLabel("Class View/Update Panel"));
+//            ClassesViewOrUpdate comp = new ClassesViewOrUpdate();
+//            jSplitPane1.setRightComponent(comp);
+//        }
+//    }
+//}
+
+
+
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -323,3 +525,4 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton teacherViewUpdateButton;
     // End of variables declaration//GEN-END:variables
 }
+
