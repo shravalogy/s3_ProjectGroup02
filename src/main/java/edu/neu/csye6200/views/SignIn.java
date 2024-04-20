@@ -100,8 +100,10 @@ public class SignIn extends JFrame {
         if (loginValid) {
             errorMessageLabel.setText("Valid Login");
             // Open MainFrame and close SignIn window
-            new MainFrame().setVisible(true);
-            this.setVisible(false); // Hide SignIn frame
+            System.out.print("inside login");
+            MainFrame mainFrame = new MainFrame();
+            mainFrame.setVisible(true);
+            this.dispose(); // Hide SignIn frame
         } else {
             errorMessageLabel.setText("Invalid Login");
             JOptionPane.showMessageDialog(this, "Invalid username or password", "Login Failed", JOptionPane.ERROR_MESSAGE);
