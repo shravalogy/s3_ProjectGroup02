@@ -54,19 +54,19 @@ public class Imunnization extends Student {
         this.vaccinate = vaccinate;
     }
     public String getAddImmuQuery(){
-        return "Insert into immunization_record(next_dose_due_date,student_id,vaccinated) values(?,?,?)";
+        return "Insert into student_immunizations(next_dose_due_date,student_id,vaccinated) values(?,?,?)";
     } 
     
      public String getImmunizationdetail(){
         DateTime dateTime = new DateTime();
         DateTime after = dateTime.plusDays(15);
        //Ssystem.out.println()
-        return "Select student_id from immunization_record WHERE next_dose_due_date  < ('"+after+"')";
+        return "Select student_id from student_immunizations WHERE next_dose_due_date  < ('"+after+"')";
     }
     
     public String getEmail(Integer stid){
         
-        return "SELECT parent.email FROM parent INNER JOIN student ON parent.parent_id=student.parent_id  WHERE student.student_id = ("+stid+")";
+        return "SELECT guardians.email FROM guardians INNER JOIN student ON guardians.parent_id=student.parent_id  WHERE student.student_id = ("+stid+")";
     }
 
     

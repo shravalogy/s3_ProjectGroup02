@@ -25,7 +25,7 @@ public class SignIn extends JFrame {
     public SignIn() {
         initComponents();
         setupLayout();
-        setTitle("Daycare Management - Sign In");
+        setTitle("Student Information System - Sign In");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(400, 300);
         setLocationRelativeTo(null); // Center on screen
@@ -38,7 +38,7 @@ public class SignIn extends JFrame {
         signInButton = new JButton("Sign In");
         signUpButton = new JButton("Sign Up");
         errorMessageLabel = new JLabel();
-        heading = new JLabel("Daycare Management System", SwingConstants.CENTER);
+        heading = new JLabel("Student Information System", SwingConstants.CENTER);
         usernameLabel = new JLabel("Username:");
         passwordLabel = new JLabel("Password:");
 

@@ -26,7 +26,7 @@ public class MainFrame extends JFrame {
     public MainFrame() {
         initComponents();
         setupButtonActions();
-        setTitle("Daycare Management System");
+        setTitle("Student Information System");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600); // Set the initial size of the frame
         setLocationRelativeTo(null); // Center the frame
@@ -51,15 +51,15 @@ public class MainFrame extends JFrame {
         buttonPanel.setBackground(new Color(153, 0, 0));
         
         // Initialize and add buttons to the button panel
-        teacherRegistrationButton = new JButton("Teacher Registration");
+        teacherRegistrationButton = new JButton("Instructor Registration");
         studentRegistrationButton = new JButton("Student Registration");
         studentViewUpdateButton = new JButton("Student View/Update");
-        immunizationButton = new JButton("Immunization");
+        immunizationButton = new JButton("Student_immunizations");
         assignStudentsButton = new JButton("Assign Students");
         teacherViewUpdateButton = new JButton("Teacher View/Update");
         annualReviewButton = new JButton("Annual Review");
         classViewUpdateButton = new JButton("Class View/Update");
-        signOutButton = new JButton("Log Out");
+        signOutButton = new JButton("LOG OUT");
 
         buttonPanel.add(teacherRegistrationButton);
         buttonPanel.add(studentRegistrationButton);

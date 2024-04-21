@@ -110,8 +110,8 @@ public class ClassesViewOrUpdate extends JPanel {
             DB db = DB.getObj(); // Assuming 'getInstance' is the method to get a DB object
             DefaultTableModel model = (DefaultTableModel) classTable.getModel();
             model.setRowCount(0);
-            ResultSet rs = db.query("SELECT teacher.employee_id, teacher.fname, student.student_id, student.name " +
-                    "FROM student, teacher WHERE student.class_id=" + classId + " AND student.class_id=teacher.class_id;");
+            ResultSet rs = db.query("SELECT instructors.employee_id, instructors.fname, student.student_id, student.name " +
+                    "FROM student, instructors WHERE student.class_id=" + classId + " AND student.class_id=instructors.class_id;");
             while (rs.next()) {
                 Vector<String> row = new Vector<>();
                 row.add(rs.getString("employee_id"));
