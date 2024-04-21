@@ -16,10 +16,7 @@ import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author premkumarmanoharan
- */
+
 public class TeacherViewOrUpdate extends javax.swing.JPanel {
 
     /**
@@ -60,9 +57,9 @@ public class TeacherViewOrUpdate extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         heading = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(51, 102, 255));
+        setBackground(new java.awt.Color(153,0,0));
 
-        jPanel1.setBackground(new java.awt.Color(51, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(153,0,0));
 
         employeeID.setEditable(false);
         employeeID.setBackground(new java.awt.Color(204, 204, 204));

@@ -62,7 +62,7 @@ public class ImmunizationAdd extends javax.swing.JPanel {
         upcomingDoseDateText = new JTextField();
         ButtonGroup vaccinationButtonGroup = new ButtonGroup();
 
-        setBackground(new java.awt.Color(51, 102, 255));
+        setBackground(new java.awt.Color(153,0,0));
         title.setFont(new java.awt.Font("Helvetica Neue", 1, 24));
         
         // Table setup

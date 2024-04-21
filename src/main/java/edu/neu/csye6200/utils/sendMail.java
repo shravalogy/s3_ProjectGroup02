@@ -12,10 +12,6 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-/**
- *
- * @author gokuljayavel
- */
 public class sendMail {
     
     public boolean sendMail(String email){
@@ -23,7 +19,7 @@ public class sendMail {
         String to = email;
 
         // Sender's email ID needs to be mentioned
-        String from = "hariharangokul2022@gmail.com";
+        String from = "test@gmail.com";
 
         // Assuming you are sending email from through gmails smtp
         String host = "smtp.gmail.com";
@@ -42,7 +38,7 @@ public class sendMail {
 
             protected PasswordAuthentication getPasswordAuthentication() {
 
-                return new PasswordAuthentication("hariharangokul2022@gmail.com", "xuwiexkolzikpxke");
+                return new PasswordAuthentication("test@gmail.com", "xuwiexkolzikpxke");
 
             }
 

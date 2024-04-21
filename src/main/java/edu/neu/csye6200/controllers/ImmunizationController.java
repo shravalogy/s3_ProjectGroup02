@@ -19,10 +19,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import edu.neu.csye6200.factory.ImmunizationBuilder;
 
-/**
- *
- * @author premkumarmanoharan
- */
 public class ImmunizationController {
 
     public boolean addImmunization(String vaccinate, String nextDate, int student_id) {

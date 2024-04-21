@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle;
 
-// ... any other Swing components you use
+
 
 
 /**

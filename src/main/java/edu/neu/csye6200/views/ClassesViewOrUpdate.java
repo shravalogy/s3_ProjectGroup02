@@ -44,7 +44,7 @@ public class ClassesViewOrUpdate extends JPanel {
         classTable = new JTable();
         titleLabel = new JLabel("Classrooms");
 
-        setBackground(new Color(51, 102, 255));
+        setBackground(new Color(153,0,0));
         controlPanel.setBackground(new Color(240, 240, 240));
 
         viewButton.addActionListener(this::viewButtonActionPerformed);
