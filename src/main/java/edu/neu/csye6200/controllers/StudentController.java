@@ -125,6 +125,7 @@ public class StudentController {
 
                 }
             }
+            System.out.println(list);
         } catch (SQLException ex) {
             Logger.getLogger(DB.class.getName()).log(Level.SEVERE, null, ex);
         }
