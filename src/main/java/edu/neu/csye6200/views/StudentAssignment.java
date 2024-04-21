@@ -20,10 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author premkumarmanoharan
- */
+
 public class StudentAssignment extends javax.swing.JPanel {
 
     /**
