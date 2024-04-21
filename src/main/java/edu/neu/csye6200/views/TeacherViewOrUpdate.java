@@ -380,7 +380,7 @@ public class TeacherViewOrUpdate extends javax.swing.JPanel {
          DB db = DB.getObj();
         DefaultTableModel df = (DefaultTableModel) jTable1.getModel();
         df.setRowCount(0);
-        ResultSet rs = db.query("SELECT employee_id,fname,lname,emp_phone_no,emp_address,class_id,emp_ratings FROM teacher order by employee_id");
+        ResultSet rs = db.query("SELECT employee_id,fname,lname,emp_phone_no,emp_address,class_id,emp_ratings FROM instructors order by employee_id");
         ResultSetMetaData rss = rs.getMetaData();
         int c = rss.getColumnCount();
         while(rs.next()){

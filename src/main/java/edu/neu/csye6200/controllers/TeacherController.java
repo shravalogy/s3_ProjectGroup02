@@ -41,7 +41,7 @@ public class TeacherController {
         try {
              DB db = DB.getObj();
             Connection conn = db.conn;
-            PreparedStatement stmt = conn.prepareStatement("select * from teacher");
+            PreparedStatement stmt = conn.prepareStatement("select * from instructors");
             Vector columnNames = new Vector();
             Vector data = new Vector();
             ResultSet rs = stmt.executeQuery();
@@ -85,7 +85,7 @@ public class TeacherController {
         try {
             DB db = DB.getObj();
             Connection conn = db.conn;
-            PreparedStatement stmt = conn.prepareStatement("Insert into teacher(fname,lname,emp_phone_no,emp_address,class_id) values(?,?,?,?,?)");
+            PreparedStatement stmt = conn.prepareStatement("Insert into instructors(fname,lname,emp_phone_no,emp_address,class_id) values(?,?,?,?,?)");
             stmt.setString(1, teacher.getFname());
             stmt.setString(2, teacher.getLname());
             stmt.setString(3, teacher.getPhoneNo());
@@ -97,7 +97,7 @@ public class TeacherController {
                 return false;
             } else {
                 System.out.println("Record inserted");
-                PreparedStatement update = conn.prepareStatement("update classroom set teachersAssigned = teachersAssigned + 1 where class_id = ?");
+                PreparedStatement update = conn.prepareStatement("update classes set teachersAssigned = teachersAssigned + 1 where class_id = ?");
                 update.setInt(1, teacher.getClassId());
                 update.execute();
                 return true;
@@ -132,7 +132,7 @@ public class TeacherController {
                 return false;
             } else {
                 System.out.println("Record inserted");
-                PreparedStatement update = conn.prepareStatement("update classroom set studentsEnrolled = studentsEnrolled + 1 where class_id = ?");
+                PreparedStatement update = conn.prepareStatement("update classes set studentsEnrolled = studentsEnrolled + 1 where class_id = ?");
                 update.setInt(1, classId);
                 update.execute();
                 return true;
@@ -172,7 +172,7 @@ public class TeacherController {
              DB db = DB.getObj();
             Connection conn = db.conn;
             if(teacher.getEmployeeId()!=0){
-                PreparedStatement deleteByEmployeeID = conn.prepareStatement("DELETE FROM teacher WHERE employee_id=?");
+                PreparedStatement deleteByEmployeeID = conn.prepareStatement("DELETE FROM instructors WHERE employee_id=?");
             deleteByEmployeeID.setString(1,String.valueOf(teacher.getEmployeeId()));
             Boolean executed = deleteByEmployeeID.execute();
             if (executed) {
@@ -193,11 +193,11 @@ public class TeacherController {
         try {
              DB db = DB.getObj();
             Connection conn = db.conn;
-            PreparedStatement updateFirstName=conn.prepareStatement("UPDATE teacher SET fname=? WHERE employee_id=?");
-            PreparedStatement updateLastName=conn.prepareStatement("UPDATE teacher SET lname=? WHERE employee_id=?");
-            PreparedStatement updatephoneNumber=conn.prepareStatement("UPDATE teacher SET emp_phone_no=? WHERE employee_id=?");
-            PreparedStatement updateAddress=conn.prepareStatement("UPDATE teacher SET emp_address=? WHERE employee_id=?");
-            PreparedStatement updateRating=conn.prepareStatement("UPDATE teacher SET emp_ratings=? WHERE employee_id=?");
+            PreparedStatement updateFirstName=conn.prepareStatement("UPDATE instructors SET fname=? WHERE employee_id=?");
+            PreparedStatement updateLastName=conn.prepareStatement("UPDATE instructors SET lname=? WHERE employee_id=?");
+            PreparedStatement updatephoneNumber=conn.prepareStatement("UPDATE instructors SET emp_phone_no=? WHERE employee_id=?");
+            PreparedStatement updateAddress=conn.prepareStatement("UPDATE instructors SET emp_address=? WHERE employee_id=?");
+            PreparedStatement updateRating=conn.prepareStatement("UPDATE instructors SET emp_ratings=? WHERE employee_id=?");
             if(teacher.getEmployeeId()!=0){
                 if (teacher.getFname().length()!=0) {
                     updateFirstName.setString(1, teacher.getFname());

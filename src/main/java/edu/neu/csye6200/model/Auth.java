@@ -17,12 +17,12 @@ public class Auth {
     
     
     public static String getPasswordAndTypeQuery(String userName) {
-        String query = "SELECT password, user_type FROM auth WHERE user_name='" + userName + "';";
+        String query = "SELECT password, user_type FROM users WHERE user_name='" + userName + "';";
             return query;
     }
     
     public static String registerNewUserQuery(){
-        return "INSERT INTO auth (user_name, password, user_type) VALUES(?,?,?);";
+        return "INSERT INTO users (user_name, password, user_type) VALUES(?,?,?);";
     }
     
     

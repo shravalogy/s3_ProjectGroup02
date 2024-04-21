@@ -137,7 +137,7 @@ public class ImmunizationAdd extends javax.swing.JPanel {
         try {
             // Assuming you have a static method getObj() in DB class that returns a DB instance
             DB db = DB.getObj();
-            ResultSet rs = db.query("SELECT * FROM immunization_record;"); // Your SQL query
+            ResultSet rs = db.query("SELECT * FROM student_immunizations;"); // Your SQL query
             ResultSetMetaData metaData = rs.getMetaData();
             int columnCount = metaData.getColumnCount();
 

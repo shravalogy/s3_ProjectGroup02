@@ -262,7 +262,7 @@ public class StudentViewOrUpdate extends javax.swing.JPanel {
         DefaultTableModel df = (DefaultTableModel) jTable1.getModel();
         df.setRowCount(0);
         ResultSet rs = db.query("SELECT s.student_id,s.name,s.age,s.dob,s.parent_id,p.p_name,p.address,p.phone,p.email"
-                + " FROM student s,parent p WHERE s.parent_id=p.parent_id order by s.student_id ;");
+                + " FROM student s,guardians p WHERE s.parent_id=p.parent_id order by s.student_id ;");
         java.sql.ResultSetMetaData rss = rs.getMetaData();
         int c = rss.getColumnCount();
         while (rs.next()) {

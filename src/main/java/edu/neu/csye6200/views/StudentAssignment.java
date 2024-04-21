@@ -224,7 +224,7 @@ public class StudentAssignment extends javax.swing.JPanel {
         DB db = DB.getObj();
         DefaultTableModel df = (DefaultTableModel) jTable1.getModel();
         df.setRowCount(0);
-        ResultSet rs = db.query("SELECT s.student_id,s.name,c.class_id FROM student s,classroom c WHERE s.class_id=c.class_id order by s.student_id;");
+        ResultSet rs = db.query("SELECT s.student_id,s.name,c.class_id FROM student s,classes c WHERE s.class_id=c.class_id order by s.student_id;");
         ResultSetMetaData rss = rs.getMetaData();
         int c = rss.getColumnCount();
         while(rs.next()){

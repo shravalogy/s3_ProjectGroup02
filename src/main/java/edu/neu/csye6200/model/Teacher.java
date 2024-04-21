@@ -101,18 +101,18 @@ public class Teacher {
     }
     
     public String updateStudentTeacher(){
-            return "UPDATE teacher SET " +
+            return "UPDATE instructors SET " +
                          " class_id = " +"'"+this.classId+"'"+
                         " WHERE class_id =" +"'"+ this.classId + "'"+";";
         }
     public static String getListOfTeachers(){
-            return "select fname from teacher";
+            return "select fname from instructors";
         }
     public static String updateclassId(){
-        return "update teacher set class_id = ? where fname = ?";
+        return "update instructors set class_id = ? where fname = ?";
     }
     public String updateTeacherTable(){
-                return "UPDATE teacher SET " +
+                return "UPDATE instructors SET " +
                          " fname = " +"'"+this.fname+"'"+
                         ", lname = " +"'"+ this.lname +"'"+
                         ", emp_phone_no = " +"'"+ this.phoneNo +  "'"+

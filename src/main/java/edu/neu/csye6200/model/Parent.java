@@ -87,11 +87,11 @@ public class Parent {
 	}
 
 	public String generateRegisterQuery() {
-		return "INSERT INTO parent (p_name, address, phone,email) VALUES(?,?,?,?)";
+		return "INSERT INTO guardians (p_name, address, phone,email) VALUES(?,?,?,?)";
 	}
         
         public String updateParentTable(){
-                return "UPDATE parent SET " +
+                return "UPDATE guardians SET " +
                          " p_name = " +"'" +this.parentName+"'" +
                         ", address = " +"'"+ this.parentAddress +"'" +
                         ", phone = " +"'"+ this.parentPhoneNo +  "'" +

@@ -104,6 +104,7 @@ public class DB {
         public static void main(String args[]){
             String date = "2022-10-25";
             Date d = Date.valueOf(date);
+            db.getObj();
             System.out.print(d);
             
                     }

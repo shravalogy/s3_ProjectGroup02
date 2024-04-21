@@ -89,7 +89,7 @@ public class ClassRoom {
         List<Integer> classes = new ArrayList<>();
         try {
             
-            PreparedStatement statement = db.conn.prepareStatement("select c.class_id  from classroom c,student s where studentCapacity > studentsEnrolled and s.age >= minAge and s.age<=maxAge and s.student_id="+student_id);
+            PreparedStatement statement = db.conn.prepareStatement("select c.class_id  from classes c,student s where studentCapacity > studentsEnrolled and s.age >= minAge and s.age<=maxAge and s.student_id="+student_id);
             ResultSet rs = statement.executeQuery();
             ResultSetMetaData rss = rs.getMetaData();
  
@@ -111,7 +111,7 @@ public class ClassRoom {
         DB db = DB.getObj();
         List<Integer> classes = new ArrayList<>();
         try {
-            PreparedStatement statement = db.conn.prepareStatement("select class_id  from classroom");
+            PreparedStatement statement = db.conn.prepareStatement("select class_id  from classes");
             ResultSet rs = statement.executeQuery();
             ResultSetMetaData rss = rs.getMetaData();
  
