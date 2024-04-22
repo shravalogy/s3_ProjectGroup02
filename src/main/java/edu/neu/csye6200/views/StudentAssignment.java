@@ -8,8 +8,6 @@ import edu.neu.csye6200.DB;
 import edu.neu.csye6200.controllers.StudentController;
 import edu.neu.csye6200.controllers.TeacherController;
 import edu.neu.csye6200.model.ClassRoom;
-
-import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -20,7 +18,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
-
+/**
+ *
+ * @author premkumarmanoharan
+ */
 public class StudentAssignment extends javax.swing.JPanel {
 
     /**
@@ -29,13 +30,13 @@ public class StudentAssignment extends javax.swing.JPanel {
     public StudentAssignment() throws SQLException {
         initComponents();
         tableShow5();
-        List<Integer> list = new ArrayList<>();
+         List<Integer> list = new ArrayList<>();
         list = StudentController.getUnAssignedStudents();
         for(int i=0;i<list.size();i++){
             studentid.addItem(list.get(i).toString());
-            // System.out.println(list.get(i));
+           // System.out.println(list.get(i));
         }
-
+       
         List<String> teachers = new ArrayList<>();
         teachers = TeacherController.getTeacherList();
         for(int i=0;i<teachers.size();i++){
@@ -69,7 +70,7 @@ public class StudentAssignment extends javax.swing.JPanel {
         classid = new javax.swing.JComboBox<>();
         teacherName = new javax.swing.JComboBox<>();
 
-        setBackground(new Color(153, 0, 0));
+        setBackground(new java.awt.Color(51, 102, 255));
 
         jLabel2.setText("Class ID");
 
@@ -85,15 +86,15 @@ public class StudentAssignment extends javax.swing.JPanel {
         jLabel1.setText("Student ID");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                new Object [][] {
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
-                },
-                new String [] {
-                        "Student ID", "Student Name", "Class ID"
-                }
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Student ID", "Student Name", "Class ID"
+            }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -120,56 +121,56 @@ public class StudentAssignment extends javax.swing.JPanel {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel1)
-                                                        .addComponent(jLabel2)
-                                                        .addComponent(jLabel3))
-                                                .addGap(111, 111, 111)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(studentid, 0, 99, Short.MAX_VALUE)
-                                                        .addComponent(classid, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(teacherName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(assign)))
-                                .addGap(85, 85, 85)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(65, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(heading)
-                                .addGap(357, 357, 357))
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(73, 73, 73)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(studentid, 0, 99, Short.MAX_VALUE)
+                            .addComponent(classid, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(teacherName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(assign)))
+                .addGap(85, 85, 85)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(heading)
+                .addGap(357, 357, 357))
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(134, 134, 134)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jLabel1)
-                                                        .addComponent(studentid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(28, 28, 28)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jLabel2)
-                                                        .addComponent(classid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(28, 28, 28)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jLabel3)
-                                                        .addComponent(teacherName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(38, 38, 38)
-                                                .addComponent(assign))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(38, 38, 38)
-                                                .addComponent(heading)
-                                                .addGap(36, 36, 36)
-                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(28, Short.MAX_VALUE))
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(studentid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(classid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(teacherName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addComponent(assign))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(heading)
+                        .addGap(36, 36, 36)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
 
@@ -189,7 +190,7 @@ public class StudentAssignment extends javax.swing.JPanel {
         } catch (SQLException ex) {
             Logger.getLogger(StudentAssignment.class.getName()).log(Level.ALL.SEVERE, null, ex);
         }
-        TeacherController tc = new TeacherController();
+         TeacherController tc = new TeacherController();
         try {
             tc.updateClass(fname, classId);
             tableShow5();
@@ -204,8 +205,8 @@ public class StudentAssignment extends javax.swing.JPanel {
 //        int selectedRow = jTable1.getSelectedRow();
 
         //studentId5.setText(df.getValueAt(selectedRow,0).toString());
-        //  classID.setText(df.getValueAt(selectedRow,2).toString());
-        // TeacherName.setText(df.getValueAt(selectedRow,3).toString());
+      //  classID.setText(df.getValueAt(selectedRow,2).toString());
+       // TeacherName.setText(df.getValueAt(selectedRow,3).toString());
 
     }//GEN-LAST:event_jTable1MouseClicked
 
@@ -216,24 +217,23 @@ public class StudentAssignment extends javax.swing.JPanel {
     private void studentidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentidActionPerformed
         // TODO add your handling code here:
         System.out.println("changed");
-        ClassRoom cr = new ClassRoom();
+         ClassRoom cr = new ClassRoom();
         List<Integer> classes = new ArrayList<>();
         classes = ClassRoom.getallClassList();
         classid.removeAllItems();
         System.out.println(classes);
         for(int i=0;i<classes.size();i++){
             classid.addItem(classes.get(i).toString());
-            // System.out.println(classes.get(i));
+           // System.out.println(classes.get(i));
         }
-
+        
     }//GEN-LAST:event_studentidActionPerformed
 
-    public void tableShow5() throws SQLException{
-        DB db = DB.getObj();
+ public void tableShow5() throws SQLException{
+         DB db = DB.getObj();
         DefaultTableModel df = (DefaultTableModel) jTable1.getModel();
         df.setRowCount(0);
-        ResultSet rs = db.query("SELECT s.student_id,s.name,c.class_id FROM student s,classes c WHERE s.class_id=c.class_id order by s.student_id;");
-        ResultSetMetaData rss = rs.getMetaData();
+        ResultSet rs = db.query("SELECT s.student_id,s.name,c.class_id FROM student s,classes c WHERE s.class_id=c.class_id order by s.student_id;");        ResultSetMetaData rss = rs.getMetaData();
         int c = rss.getColumnCount();
         while(rs.next()){
             Vector v = new Vector();
@@ -241,16 +241,16 @@ public class StudentAssignment extends javax.swing.JPanel {
                 v.add(rs.getString("student_id"));
                 v.add(rs.getString("name"));
                 v.add(rs.getString("class_id"));
-
+                  
             }
             df.addRow(v);
         }
     }
-
+    
     int studentId;
     int classId;
     String fname;
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assign;
     private javax.swing.JComboBox<String> classid;

@@ -144,7 +144,7 @@ public class AnnualReview extends JPanel {
 
                 DB db = DB.getObj(); // Assuming 'getInstance' is the method to get a DB object
 
-                PreparedStatement statement = db.conn.prepareStatement("INSERT INTO employee_ratings (employee_id, rating, year) VALUES (?, ?, ?);");
+                PreparedStatement statement = db.conn.prepareStatement("INSERT INTO employee_ratingsq (employee_id, rating, year) VALUES (?, ?, ?);");
                 statement.setInt(1, rating.getEmpID());
                 statement.setInt(2, rating.getRating());
                 statement.setInt(3, rating.getYear());
