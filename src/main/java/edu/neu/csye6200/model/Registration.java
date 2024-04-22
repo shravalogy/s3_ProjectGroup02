@@ -30,10 +30,6 @@ public class Registration {
         this.yearsMember = yearsMember;
     }
 
-    public int getStudent_id() {
-        return student_id;
-    }
-
     public void setStudent_id(int student_id) {
         this.student_id = student_id;
     }
@@ -42,9 +38,12 @@ public class Registration {
         return Date.valueOf(registeredDate);
     }
 
-    public void setRegisteredDate(LocalDate registeredDate) {
-        this.registeredDate = registeredDate;
+    
+    public int getStudent_id() {
+        return student_id;
     }
+
+  
 
     public Date getRenewalDate() {
         return Date.valueOf(renewalDate);
@@ -53,6 +52,12 @@ public class Registration {
     public void setRenewalDate(LocalDate renewalDate) {
         this.renewalDate = renewalDate;
     }
+
+    public void setRegisteredDate(LocalDate registeredDate) {
+        this.registeredDate = registeredDate;
+    }
+
+
 
     public int getYearsMember() {
         return yearsMember;

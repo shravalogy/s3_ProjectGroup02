@@ -70,6 +70,13 @@ public class Teacher {
         return employeeId;
     }
 
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
 
     public String getAddress() {
         return address;
@@ -79,19 +86,6 @@ public class Teacher {
         return phoneNo;
     }
 
-    public Double getRating() {
-        return rating;
-    }
-
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
-    }
-
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public void setPhoneNo(String phoneNo) {
         this.phoneNo = phoneNo;
     }
@@ -99,6 +93,12 @@ public class Teacher {
     public void setRating(Double rating) {
         this.rating = rating;
     }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+  
     
     public String updateStudentTeacher(){
             return "UPDATE instructors SET " +
