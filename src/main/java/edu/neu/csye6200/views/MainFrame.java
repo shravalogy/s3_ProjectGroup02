@@ -44,7 +44,8 @@ public class MainFrame extends JFrame {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}  
+		} 
+        
 
         // Buttons panel
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
@@ -75,6 +76,18 @@ public class MainFrame extends JFrame {
         splitPane.setResizeWeight(1); // Content takes all the initial resize space
         splitPane.setDividerSize(0);
         setContentPane(splitPane);
+        checkVisibility();
+    }
+    
+    private void checkVisibility(){
+        String userType = Auth.getUserType();
+
+        if(!userType.contentEquals("Admin")){
+                teacherRegistrationButton.setVisible(false);
+                annualReviewButton.setVisible(false);
+                teacherViewUpdateButton.setVisible(false);
+                immunizationButton.setVisible(false);
+        }
     }
 
     private void setupButtonActions() {
