@@ -17,10 +17,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author dhruvparthasarathy
- */
 public class SignInController {
 //    private static SignInController controller;
 //    

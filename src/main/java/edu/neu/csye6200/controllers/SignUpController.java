@@ -10,10 +10,6 @@ import edu.neu.csye6200.model.Registration;
 import java.sql.PreparedStatement;
 import java.time.LocalDate;
 
-/**
- *
- * @author dhruvparthasarathy
- */
 public class SignUpController {
     
     public static boolean signUp(String userName, char[] password, String userType){
