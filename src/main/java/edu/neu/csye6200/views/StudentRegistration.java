@@ -2,6 +2,7 @@
     import edu.neu.csye6200.controllers.StudentController;
     import javax.swing.*;
     import java.awt.*;
+    import java.sql.SQLException;
 
     public class StudentRegistration extends JPanel {
 
@@ -93,6 +94,12 @@
             boolean success = std.addStudentAndParent(studentName, dob, parentName, phone, address, email);
             if (success) {
                 JOptionPane.showMessageDialog(this, "Student registered Successfully");
+                try {
+                    StudentViewOrUpdate.tableShow();
+
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
                 clearFormFields();
             } else {
                 JOptionPane.showMessageDialog(this, "Failed to register student.", "Registration Error", JOptionPane.ERROR_MESSAGE);
@@ -108,4 +115,4 @@
             emailField.setText("");
         }
     }
-  
+
