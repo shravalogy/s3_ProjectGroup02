@@ -1,24 +1,60 @@
-# Welcome to the course CSYE6200 - Object Oriented Design
-> Northeastern University, College of Engineering
+**CSYE6200 - Object Oriented Design**
+
+Northeastern University, College of Engineering
+
+Professor: Daniel Peters
+Project Overview
+
+**Title:** Student Information System
+
+**Team Members:**
+
+Shravan Kumar Sai Prabhakar (002416030)
+Mathesh Ramesh (002413401)
+Rishabh Sharma (002470410)
+Monica Sriramreddy (002641657)
+Sameeth Kumar Goud Talla (002810105)
+
+This application is designed to simplify the registration processes for teachers and students, effectively track students' immunization records, and ensure compliance with health regulations.
+
+**Features**
+Simplified Access: Easy-to-navigate information panel for Student Care Managers.
+Registration Renewals: Digital tracking of annual renewals for instructors and students.
+Health Alert Hub: Automated vaccination reminders to ensure timely protection for students.
+Easy Enrollment: Streamlined registration process for students and instructors.
+Vaccination Verification Vault: Efficient storage and access to vaccination records.
+Legal Liaison and Classroom Cohesion: Compliance with state legislation for student-instructor assignments.
+
+**Technologies Used**
+Java
+Java AWT
+GUI with Swing
+MySQL Database
+Development Environment Requirements
+
+**Supported IDEs:**
+Eclipse (with git CLI installed)
+VS Code
+IntelliJ IDEA
+Version Control:
+Git CLI or GitHub Desktop
 
 
-## Professor: Daniel Peters
+**Contributions**
 
-### Requirements
-1. Eclipse or VS Code or IntelliJ.
+Teacher Registration and Management: Shravan Kumar Sai Prabhakar
+Student Registration and Management: Mathesh Ramesh
+Immunization and Student Assignments: Rishabh Sharma
+Annual Review and Class Management: Monica Sriramreddy
+Authentication and Presentation: Sameeth Kumar Goud Talla
 
-Note: If you are using Eclipse, please have git CLI installed on your system or GitHub Desktop to commit the code in this repository
+**Future Improvements**
 
-### SetUp Instructions
-1. Please clone the repository on your local system
-2. For Eclipse Import the project as Existing Maven Project, For IntelliJ you can directlty open it using 'Get from VCS'.
-4. All code should be pushed to the main branch
-3. Ensure the GitHub actions are successful post push
+Frontend Integration: Transition to React for better user interaction and integrate with a Java-based Spring Boot backend.
+Infrastructure Upgrades: Move to a cloud-hosted environment with a microservices architecture.
+Database Evolution: Shift from MySQL to a NoSQL database to enhance scalability and performance.
 
-Submissions will have deadlines, failed GitHub Actions would result in point deductions.
+Thank You
 
-### References
-1. Cloning a Repository: <https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository>
-2. Any GitHub Setup: Please refer to the Git & GitHub Fundamentals Repository shared to you by your respective TA and refer the README.md section
 
-Please reach out to your respective TA if you need any help in regards with submission/ GitHub
+Thank you for visiting our project repository. For more information or to view our progress, please visit the sections above.
