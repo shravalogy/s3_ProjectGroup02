@@ -42,7 +42,7 @@ public class TeacherRegistrationPannel extends javax.swing.JPanel {
         JLabel addressLabel = new JLabel("Address:");
         JLabel typeLabel = new JLabel("Employee Type:");
         JLabel classidLabel = new JLabel("Class ID:");
-        JLabel heading = new JLabel("Teacher Registration", SwingConstants.CENTER);
+        JLabel heading = new JLabel("Instructor Registration", SwingConstants.CENTER);
         heading.setFont(new java.awt.Font("Segoe UI", 1, 24));
 
         // Text fields and area
