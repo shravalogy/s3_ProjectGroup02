@@ -107,7 +107,7 @@ public class StudentController {
         }
         return status;
     }
-    public static List<Integer> getUnAssignedStudents(){
+    public  List<Integer> getUnAssignedStudents(){
         List<Integer> list = new ArrayList<>();
          DB db = DB.getObj();
 
