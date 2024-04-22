@@ -7,7 +7,7 @@ import edu.neu.csye6200.model.ClassRoom;
 
 /**
  *
- * @author gokuljayavel
+ * @author monicaSriramreddy
  */
 
 //eagar singleton
@@ -22,7 +22,6 @@ public class ClassRoomFactory {
 			return ele;
 		}
         public ClassRoom getObject(){
-            
             return new ClassRoom();
             
         }

@@ -6,7 +6,7 @@ package edu.neu.csye6200.model;
 
 /**
  *
- * @author dhruvparthasarathy
+ * @author monicaSriramreddy
  */
 public class Auth {
     

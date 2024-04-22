@@ -6,7 +6,7 @@ package edu.neu.csye6200.factory;
 import edu.neu.csye6200.model.Student;
 /**
  *
- * @author gokuljayavel
+ * @author monicaSriramreddy
  */
 public class StudentFactory {
      private static StudentFactory ele;
@@ -30,6 +30,10 @@ public class StudentFactory {
         return new Student(studentId, classId);
     }
     
+    public Student getObject(int studentId, String studentName, int age, String dateofBirth ){
+        return new Student(studentId, studentName, age, dateofBirth);
+    }
+    
     public Student getObject(int studentId, String studentName, String dateofBirth){
         return new Student(studentId, studentName, dateofBirth);
     }
@@ -38,9 +42,7 @@ public class StudentFactory {
         return new Student(studentName, dateOfBirth, age);
     }
     
-    public Student getObject(int studentId, String studentName, int age, String dateofBirth ){
-        return new Student(studentId, studentName, age, dateofBirth);
-    }
+    
     
     
 }

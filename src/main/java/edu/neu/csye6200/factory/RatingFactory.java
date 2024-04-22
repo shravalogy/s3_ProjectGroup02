@@ -6,7 +6,7 @@ package edu.neu.csye6200.factory;
 import edu.neu.csye6200.model.Rating;
 /**
  *
- * @author gokuljayavel
+ * @author monicaSriramreddy
  */
 public class RatingFactory {
     private static RatingFactory ele;
