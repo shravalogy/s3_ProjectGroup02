@@ -3,6 +3,7 @@
 Northeastern University, College of Engineering
 
 Professor: Daniel Peters
+
 Project Overview
 
 **Title:** Student Information System
