@@ -7,7 +7,7 @@ import edu.neu.csye6200.model.Teacher;
 
 /**
  *
- * @author gokuljayavel
+ * @author monicaSriramreddy
  */
 public class TeacherFactory {
     private static TeacherFactory ele;
@@ -23,6 +23,10 @@ public class TeacherFactory {
         return ele;
     }
     
+    public Teacher getObject(int employeeID,String fname, String lname, String address, String phoneNo, int classId,Double rating){
+        return new Teacher(employeeID, fname, lname, address, phoneNo, classId, rating);
+    }
+    
     public Teacher getObject(){
         return new Teacher();
     }
@@ -31,8 +35,5 @@ public class TeacherFactory {
         return new Teacher(fname, lname, address, phoneNo, classId);
     }
     
-    public Teacher getObject(int employeeID,String fname, String lname, String address, String phoneNo, int classId,Double rating){
-        return new Teacher(employeeID, fname, lname, address, phoneNo, classId, rating);
-    }
-    
+   
 }

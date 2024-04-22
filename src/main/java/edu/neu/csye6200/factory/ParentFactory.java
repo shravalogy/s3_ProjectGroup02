@@ -7,7 +7,7 @@ import edu.neu.csye6200.model.Parent;
 
 /**
  *
- * @author gokuljayavel
+ * @author monicaSriramreddy
  */
 //lazy singleton
 public class ParentFactory implements ParentAbstractFactory{
@@ -24,13 +24,15 @@ public class ParentFactory implements ParentAbstractFactory{
         }
         return ele;
     }
+
+    public Parent getObject(int parentId, String parentName, String parentAddress, String parentPhoneNo,String email){
+        return new Parent( parentId,  parentName,  parentAddress,  parentPhoneNo, email);
+    }
+
     @Override
     public Parent getObject(String parentName, String parentAddress, String parentPhoneNo,String email){
         return new Parent( parentName,  parentAddress,  parentPhoneNo, email);
     }
     
-    public Parent getObject(int parentId, String parentName, String parentAddress, String parentPhoneNo,String email){
-        return new Parent( parentId,  parentName,  parentAddress,  parentPhoneNo, email);
-    }
-
+  
 }
