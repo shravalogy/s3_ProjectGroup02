@@ -42,6 +42,11 @@ public class StudentAssignment extends javax.swing.JPanel {
             teacherName.addItem(teachers.get(i));
             System.out.println(teachers.get(i));
         }
+
+        for(Integer i:ClassRoom.getallClassList()){
+            classid.addItem(Integer.toString(i));
+            System.out.println(i+" s");
+        }
     }
 
     /**
@@ -166,6 +171,9 @@ public class StudentAssignment extends javax.swing.JPanel {
                                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(28, Short.MAX_VALUE))
         );
+
+
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignActionPerformed
@@ -210,7 +218,7 @@ public class StudentAssignment extends javax.swing.JPanel {
         System.out.println("changed");
         ClassRoom cr = new ClassRoom();
         List<Integer> classes = new ArrayList<>();
-        classes = cr.getClassList(Integer.parseInt(studentid.getSelectedItem().toString()));
+        classes = ClassRoom.getallClassList();
         classid.removeAllItems();
         System.out.println(classes);
         for(int i=0;i<classes.size();i++){

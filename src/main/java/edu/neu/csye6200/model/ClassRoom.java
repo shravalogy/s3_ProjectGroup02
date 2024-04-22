@@ -107,7 +107,7 @@ public class ClassRoom {
         }
         return classes;
     }
-    public List<Integer> getallClassList() {
+    public static List<Integer> getallClassList() {
         DB db = DB.getObj();
         List<Integer> classes = new ArrayList<>();
         try {

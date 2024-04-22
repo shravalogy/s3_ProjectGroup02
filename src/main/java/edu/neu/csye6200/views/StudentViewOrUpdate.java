@@ -72,7 +72,7 @@ public class StudentViewOrUpdate extends javax.swing.JPanel {
 
             emailParentLabel = new javax.swing.JLabel();
             emailParentLabel.setText("Parent Email:");
-            
+
             Update.setText("Update");
             Update.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -257,7 +257,7 @@ public class StudentViewOrUpdate extends javax.swing.JPanel {
         parentPhoneNum.setText(df.getValueAt(selectedRow, 7).toString());
     }//GEN-LAST:event_jTable1MouseClicked
 
-    public void tableShow() throws SQLException {
+    public static void tableShow() throws SQLException {
         DB db = DB.getObj();
         DefaultTableModel df = (DefaultTableModel) jTable1.getModel();
         df.setRowCount(0);
@@ -265,6 +265,7 @@ public class StudentViewOrUpdate extends javax.swing.JPanel {
                 + " FROM student s,guardians p WHERE s.parent_id=p.parent_id order by s.student_id ;");
         java.sql.ResultSetMetaData rss = rs.getMetaData();
         int c = rss.getColumnCount();
+
         while (rs.next()) {
             Vector v = new Vector();
             for (int a = 1; a <= c; a++) {
@@ -279,6 +280,7 @@ public class StudentViewOrUpdate extends javax.swing.JPanel {
                 v.add(rs.getString("email"));
             }
             df.addRow(v);
+
         }
     }
 
@@ -300,7 +302,7 @@ public class StudentViewOrUpdate extends javax.swing.JPanel {
     private javax.swing.JLabel emailParentLabel;
     private javax.swing.JLabel heading;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private static javax.swing.JTable jTable1;
     private javax.swing.JTextField parent_Address;
     private javax.swing.JLabel parentAddressLabel;
     private javax.swing.JTextField parentID;
@@ -316,3 +318,5 @@ public class StudentViewOrUpdate extends javax.swing.JPanel {
     // End of variables declaration
 }
 
+//    ResultSet rs = db.query("SELECT s.student_id,s.name,s.age,s.dob,s.parent_id,p.p_name,p.address,p.phone,p.email"
+//                + " FROM student s,guardians p WHERE s.parent_id=p.parent_id order by s.student_id ;");
