@@ -37,6 +37,8 @@ public class MainFrame extends JFrame {
         mainContentPanel = new JPanel();
         cardLayout = new CardLayout();
         mainContentPanel.setLayout(cardLayout);
+        mainContentPanel.add(new JPanel(), "BlankPanel");  // Adding a blank panel
+        cardLayout.show(mainContentPanel, "BlankPanel"); 
 
         // Create the actual panels for each part of the application
         try {
